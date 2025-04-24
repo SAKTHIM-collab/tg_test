@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Titan's Circuit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game-wrapper">
+    <h1 id="title">Titan's Circuit</h1>
+
+    <div id="mode-selector">
+      <button id="normalMode" class="active">Normal Mode</button>
+      <button id="hackerMode">Hacker Mode</button>
+      <button id="hackerPlusMode">Hacker++ Mode</button>
+    </div>
+
+    <div id="board"></div>
+
+    <div id="ui">
+      <div class="player-info">
+        <div class="player red">
+          <h3>Red Titan</h3>
+          <div class="score">Score: <span id="redScore">0</span></div>
+          <div class="titans">Titans: <span id="redTitans">0</span>/4</div>
+        </div>
+        
+        <div class="game-status">
+          <div id="currentPlayer">Red's Turn</div>
+          <div>Turn Timer: <span id="turnTimer">30</span>s</div>
+          <div>Game Timer: <span id="gameTimer">300</span>s</div>
+        </div>
+        
+        <div class="player blue">
+          <h3>Blue Titan</h3>
+          <div class="score">Score: <span id="blueScore">0</span></div>
+          <div class="titans">Titans: <span id="blueTitans">0</span>/4</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="controls">
+      <div id="basic-controls">
+        <button id="pauseBtn">Pause</button>
+        <button id="resumeBtn">Resume</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+      
+      <div id="hacker-controls" class="hidden">
+        <button id="undoBtn">Undo</button>
+        <button id="redoBtn">Redo</button>
+        <button id="soundBtn">Sound: ON</button>
+      </div>
+      
+      <div id="hacker-plus-controls" class="hidden">
+        <button id="powerupBtn">Use Power-Up</button>
+        <button id="replayBtn">Replay</button>
+        <button id="analysisBtn">Game Review</button>
+      </div>
+    </div>
+
+    <div id="move-history" class="hidden">
+      <h3>Move History</h3>
+      <div id="history-list"></div>
+    </div>
+  </div>
+
+  <audio id="placeSound" src="place.wav" preload="auto"></audio>
+  <audio id="moveSound" src="move.wav" preload="auto"></audio>
+  <audio id="captureSound" src="capture.wav" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
