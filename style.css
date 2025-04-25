@@ -253,6 +253,7 @@ button:hover {
   100% { transform: translate(-50%, -50%) scale(1); }
 }
 
+/* Responsive */
 @media (max-width: 900px) {
   #board {
     width: 90vw;

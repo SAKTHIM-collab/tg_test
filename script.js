@@ -606,6 +606,7 @@ function setGameMode(mode) {
     
     document.getElementById(`${mode}Mode`).classList.add("active");
     
+    // Show/hide controls
     document.getElementById("hacker-controls").classList.add("hidden");
     document.getElementById("hacker-plus-controls").classList.add("hidden");
     moveHistorySection.classList.add("hidden");
@@ -619,9 +620,11 @@ function setGameMode(mode) {
         moveHistorySection.classList.remove("hidden");
     }
     
+    // Reset game when changing modes
     resetGame();
 }
 
+// Setup event listeners
 function setupEventListeners() {
     pauseBtn.addEventListener("click", pauseGame);
     resumeBtn.addEventListener("click", resumeGame);
@@ -637,20 +640,24 @@ function setupEventListeners() {
     hackerPlusModeBtn.addEventListener("click", () => setGameMode('hacker++'));
 }
 
+// Placeholder for power-up functionality
 function usePowerup() {
     if (gameMode !== 'hacker++') return;
     alert("Power-up used! (Implementation would go here)");
     addToHistory(`${currentPlayer} used a power-up`);
 }
 
+// Placeholder for replay functionality
 function replayGame() {
     if (gameMode !== 'hacker++') return;
     alert("Game replay started! (Implementation would go here)");
 }
 
+// Placeholder for game analysis
 function analyzeGame() {
     if (gameMode !== 'hacker++') return;
     alert("Game analysis displayed! (Implementation would go here)");
 }
 
+// Initialize the game when DOM is loaded
 document.addEventListener('DOMContentLoaded', initGame);
