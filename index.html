@@ -2,97 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <title>Titan's Circuit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
 
 
 <body>
-  <!-- Splash Screen -->
-<!-- Splash Screen -->
-<div id="splash-screen">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEtptqmDTUvpJcMBAirzkdIbbd1SndR2vduCslH4Xet4D-MoXjvjhFFMLahScJTwkJQto&usqp=CAU" alt="Delta Logo" id="delta-logo" />
-  <div id="loading-bar">
-    <div id="loading-progress"></div>
-    <div id="loading-text">0%</div>
+  <div id="particles-js"></div>
+
+  <div id="splash-screen">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEtptqmDTUvpJcMBAirzkdIbbd1SndR2vduCslH4Xet4D-MoXjvjhFFMLahScJTwkJQto&usqp=CAU" alt="Delta Logo" id="delta-logo" />
+    <div id="loading-bar">
+      <div id="loading-progress"></div>
+      <div id="loading-text">0%</div>
+    </div>
   </div>
-</div>
 
-<!-- Rules Popup -->
-<div id="rules-popup">
-  <div class="rules-content">
-    <h2>Game Rules</h2>
+  <div id="rules-popup">
+    <div class="rules-content">
+      <h2>Game Rules</h2>
 
-    <p><strong>Gameplay Phases</strong></p>
-    <ol>
-      <li><strong>Placement Phase:</strong>
-        <ul>
-          <li>Players take turns placing their pieces on available nodes in the outermost circuit when starting the game.</li>
-          <li>Players can either place their remaining titans on the unlocked circuit or move the existing titans.</li>
-          <li>When the unlocked circuit is fully filled, the inner circuit gets unlocked.</li>
-        </ul>
-      </li>
-      <li><strong>Movement Phase:</strong>
-        <ul>
-          <li>Once all titans are placed, players take turns moving one titan at a time to an adjacent node along connected edges (Titans can only move along the edges).</li>
-          <li>A titan surrounded by opponent titans is permanently removed from play.</li>
-        </ul>
-      </li>
-    </ol>
+      <p><strong>Gameplay Phases</strong></p>
+      <ol>
+        <li><strong>Placement Phase:</strong>
+          <ul>
+            <li>Players take turns placing their pieces on available nodes in the outermost circuit when starting the game.</li>
+            <li>Players can either place their remaining titans on the unlocked circuit or move the existing titans.</li>
+            <li>When the unlocked circuit is fully filled, the inner circuit gets unlocked.</li>
+          </ul>
+        </li>
+        <li><strong>Movement Phase:</strong>
+          <ul>
+            <li>Once all titans are placed, players take turns moving one titan at a time to an adjacent node along connected edges (Titans can only move along the edges).</li>
+            <li>A titan surrounded by opponent titans is permanently removed from play.</li>
+          </ul>
+        </li>
+      </ol>
 
-    <p><strong>Scoring System</strong></p>
-    <ul>
-      <li>Points are earned by controlling edges.</li>
-      <li>An edge is controlled when both its connected nodes are occupied by the same player.</li>
-      <li>Points equal to the edge's weight are added to the player's score.</li>
-      <li>If a piece moves away from a controlled edge, points equal to that edge's weight are deducted.</li>
-    </ul>
+      <p><strong>Scoring System</strong></p>
+      <ul>
+        <li>Points are earned by controlling edges.</li>
+        <li>An edge is controlled when both its connected nodes are occupied by the same player.</li>
+        <li>Points equal to the edge's weight are added to the player's score.</li>
+        <li>If a piece moves away from a controlled edge, points equal to that edge's weight are deducted.</li>
+      </ul>
 
-    <p><strong>Winning Conditions</strong></p>
-    <ul>
-      <li>The game ends when the overall timer expires or the innermost hexagon is fully occupied.</li>
-      <li>The player with the highest score at the end of the game wins.</li>
-    </ul>
+      <p><strong>Winning Conditions</strong></p>
+      <ul>
+        <li>The game ends when the overall timer expires or the innermost hexagon is fully occupied.</li>
+        <li>The player with the highest score at the end of the game wins.</li>
+      </ul>
 
-    <p><strong>Game Modes</strong></p>
-    <p><strong>Normal Mode:</strong></p>
-    <ul>
-      <li>A demo video has been provided.</li>
-      <li>Create three concentric hexagonal circuits, join the vertices to create edges, and add weights as shown in the demo.</li>
-      <li>Implement titan placing logic along with movement logic. Titans can move along the edges to adjacent vertices.</li>
-      <li>Implement edge score capturing logic as explained in the demo.</li>
-      <li>Add pause, resume, and reset features.</li>
-      <li>Make the game mobile responsive.</li>
-      <li>Add a time system: Each player gets a specific amount of time. The timer must decrement during the respective player's turn, and there should be a limited time for each move.</li>
-    </ul>
+      <p><strong>Game Modes</strong></p>
+      <p><strong>Normal Mode:</strong></p>
+      <ul>
+        <li>A demo video has been provided.</li>
+        <li>Create three concentric hexagonal circuits, join the vertices to create edges, and add weights as shown in the demo.</li>
+        <li>Implement titan placing logic along with movement logic. Titans can move along the edges to adjacent vertices.</li>
+        <li>Implement edge score capturing logic as explained in the demo.</li>
+        <li>Add pause, resume, and reset features.</li>
+        <li>Make the game mobile responsive.</li>
+        <li>Add a time system: Each player gets a specific amount of time. The timer must decrement during the respective player's turn, and there should be a limited time for each move.</li>
+      </ul>
 
-    <p><strong>Hacker Mode:</strong></p>
-    <ul>
-      <li>Add Undo and Redo buttons.</li>
-      <li>Display the history of moves of both players.</li>
-      <li>Add in-game sound effects.</li>
-      <li>Add smooth animations for piece movements.</li>
-      <li>Implement titan elimination: If a player's titan is surrounded by opponent titans on all neighboring sides, it is eliminated.</li>
-      <li>Implement a local storage-based leaderboard.</li>
-    </ul>
+      <p><strong>Hacker Mode:</strong></p>
+      <ul>
+        <li>Add Undo and Redo buttons.</li>
+        <li>Display the history of moves of both players.</li>
+        <li>Add in-game sound effects.</li>
+        <li>Add smooth animations for piece movements.</li>
+        <li>Implement titan elimination: If a player's titan is surrounded by opponent titans on all neighboring sides, it is eliminated.</li>
+        <li>Implement a local storage-based leaderboard.</li>
+      </ul>
 
-    <p><strong>Timers:</strong></p>
-    <ul>
-      <li><strong>Overall Timer:</strong> Limits the total game duration.</li>
-      <li><strong>Turn Timer:</strong> Limits each player's time per turn.</li>
-    </ul>
+      <p><strong>Timers:</strong></p>
+      <ul>
+        <li><strong>Overall Timer:</strong> Limits the total game duration.</li>
+        <li><strong>Turn Timer:</strong> Limits each player's time per turn.</li>
+      </ul>
 
-    <button id="proceed-button">Proceed</button>
+      <button id="proceed-button">Proceed</button>
+    </div>
   </div>
-</div>
 
 
   <div id="leaderboard" class="hidden">
-  <h3>Top Scores</h3>
-  <div id="leaderboard-list"></div>
-</div>
+    <h3>Top Scores</h3>
+    <div id="leaderboard-list"></div>
+  </div>
   <div id="game-wrapper">
     <h1 id="title">TITAN'S CIRCUIT</h1>
 
@@ -100,35 +102,35 @@
       <button id="normalMode" class="active">Normal Mode</button>
       <button id="hackerMode">Hacker Mode</button>
       <button id="hackerPlusMode">Hacker++ Mode</button>
+      <button id="leaderboardToggle" class="hidden"><i class="fas fa-trophy"></i> Leaderboard</button>
     </div>
-<!-- Hacker++ Config Popup -->
-<div id="hackerPlusConfig" class="popup-overlay hidden">
-  <div class="popup-box">
-    <h2>Hacker++ Config</h2>
-    <label>Circuit Shape:
-      <select id="circuitShape">
-        <option value="hexagon">Hexagon</option>
-        <option value="square">Square</option>
-        <option value="triangle">Triangle</option>
-      </select>
-    </label>
+  <div id="hackerPlusConfig" class="popup-overlay hidden">
+    <div class="popup-box">
+      <h2>Hacker++ Config</h2>
+      <label>Circuit Shape:
+        <select id="circuitShape">
+          <option value="hexagon">Hexagon</option>
+          <option value="square">Square</option>
+          <option value="triangle">Triangle</option>
+        </select>
+      </label>
 
-    <label>Circuit Count:
-      <select id="circuitCount">
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-    </label>
+      <label>Circuit Count:
+        <select id="circuitCount">
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </label>
 
-    <label>
-      <input type="checkbox" id="enableBot" />
-      Enable Bot Opponent
-    </label>
+      <label>
+        <input type="checkbox" id="enableBot" />
+        Enable Bot Opponent
+      </label>
 
-    <button id="startHackerGame">Start Game</button>
+      <button id="startHackerGame">Start Game</button>
+    </div>
   </div>
-</div>
 
 
     <div id="playerNameModal" class="modal hidden">
@@ -171,10 +173,12 @@
       </div>
     </div>
 
-
     <div id="leaderboard" class="hidden">
-      <h3><i class="fas fa-trophy"></i> Leaderboard</h3>
-      <div id="leaderboardList"></div>
+      <div class="leaderboard-header">
+        <h3><i class="fas fa-trophy"></i> Leaderboard</h3>
+        <button id="closeLeaderboard" class="close-btn"><i class="fas fa-times"></i></button>
+      </div>
+      <div id="leaderboard-list"></div>
     </div>
 
     <div id="controls">
@@ -188,6 +192,7 @@
         <button id="undoBtn"><i class="fas fa-undo"></i> Undo (Ctrl+Z)</button>
         <button id="redoBtn"><i class="fas fa-redo"></i> Redo (Ctrl+Y)</button>
         <button id="soundBtn"><i class="fas fa-volume-up"></i> Sound: ON</button>
+        <button id="replayBtn"><i class="fas fa-play-circle"></i> Replay Moves</button>
       </div>
       
       <div id="hacker-plus-controls" class="hidden">
@@ -207,6 +212,7 @@
   <audio id="moveSound" src="move.wav" preload="auto"></audio>
   <audio id="captureSound" src="capture.wav" preload="auto"></audio>
 
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="script.js"></script>
 </body>
 <script>
@@ -243,13 +249,11 @@ let selectedShape = "hexagon";
 let selectedCount = 3;
 let botEnabled = false;
 
-// On click, glow and show config popup
 hackerPlusBtn.addEventListener("click", () => {
   hackerPlusBtn.classList.toggle("active");
   popup.classList.toggle("hidden");
 });
 
-// On popup config selection
 startGameBtn.addEventListener("click", () => {
   selectedShape = document.getElementById("circuitShape").value;
   selectedCount = parseInt(document.getElementById("circuitCount").value);
